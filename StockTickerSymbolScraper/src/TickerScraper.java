@@ -10,7 +10,7 @@ public class TickerScraper {
 
 	public static void main(String[] args) throws IOException {
 		
-		FileWriter writer = new FileWriter("/Users/spencerrojahn/Desktop/TradingAutomation/tickers.txt");
+		FileWriter writer = new FileWriter("/Users/spencerrojahn/Desktop/TradingAutomation/StockAnalyzerPython/tickers.txt");
 		int tickerNum = 1;
 		
 		while(true) {
