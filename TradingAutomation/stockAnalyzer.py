@@ -84,9 +84,9 @@ for ticker in tickers:
 
 		t.sleep(60)
 
-	# except KeyboardInterrupt:
-	# 	print("\nQuitting program...")
-	# 	quit()
+	except KeyboardInterrupt:
+		print("\nQuitting program...")
+		quit()
 	except:
 		print("Error getting data")
 		t.sleep(60)
