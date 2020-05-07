@@ -1,2 +1,9 @@
 # Stock_Watchlist_Helper
 Uses a Java program to get stock ticker symbols from finviz.com based on my preferred stock screening options. Then uses a Python program to determine potential buys and sells based on my preferred technical indicators and notifies me via email, and adds and removes the stocks from a watchlist.
+
+The Java program uses the Jsoup library to parse the HTML of a finviz.com stock screener that contains stocks with my preferred filters. The program creates a list of stock tickers in a the TradingAutomation/tickers.txt file. 
+
+The Python program then uses the Alpha Vantage API to stock the RSI and MACD technical indicator data for each of the stock tickers from the TradingAutamation/ticker.txt file from above. Then, if the stock is above or below a certain RSI indicator level, the program will add or remove the stock ticker to a watchlist in the TradingAutomation/watchlist.txt file. The program will also send an email to the given [RECEIVERS_EMAIL] from [YOUR_EMAIL] with an alert that the given stock ticker was added or removed from the watchlist. 
+
+NOTE:
+There is a restriction on realtime data requests using the Alpha Vantage API and the Alpha Vantage only update their stock data once per day at 1:30pm PST. Thus, even though the program uses 60 minutes (1 hour) intervals to extract the stock data, if you want to get the most recent hourly data, you will have to wait until 1:30pm PST to run the program. Also, Alpha Vantage also has a limit on number of data requests per API key (API key is free with email). The limitation is 5 requests per minutes, and 500 requests per day. Thus, to avoid any complications with the program crashing because the limitation caused a runtime error, I have caught any exception and sleep the process for 60 seconds (1 minute) so that the per minutes limitation is never reached. I also used multiple API keys, which are stored in the TradingAutomation/keys.txt file.
