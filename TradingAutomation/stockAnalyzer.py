@@ -6,7 +6,6 @@ from email.message import EmailMessage
 import pandas as pd
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators 
-#import sys
 import random
 import time as t
 
