@@ -2,15 +2,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-//import java.util.*;
 import java.io.*;
 
 public class TickerScraper {
 
 	public static void main(String[] args) throws IOException {
 		
-		FileWriter writer = new FileWriter("/Users/spencerrojahn/Desktop/TradingAutomation/tickers.txt");
+		FileWriter writer = new FileWriter("TradingAutomation/tickers.txt");
 		int tickerNum = 1;
 		
 		while(true) {
